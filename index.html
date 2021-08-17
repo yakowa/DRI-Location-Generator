@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>DRI Location Generator</title>
+	<!-- Visual -->
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="favicon32x.png" type="image/png"/>
+    <link rel="apple-touch-icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="manifest" href="site.webmanifest"/>
+
+	<!-- Loadings -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+	<link rel="stylesheet" type="text/css" href="./style.css" />
+	<script src="./index.js"></script>
+</head>
+<body onload="removeX()">
+	<noscript>You need to enable JavaScript to run this app.</noscript>
+	<div class="input">
+		<h1 style="margin-top: 0;margin-bottom: 0;">DRI Location Generator</h1>
+
+		<h3 class="title">Input</h3>
+		<hr>
+
+
+		<h4 class="step"><strong>Step 1:</strong> Select region or city</h4>
+		<div>
+			<input type="radio" name="regionOrCity" id="regionOrCity" value="city" checked>
+			<label for="regionOrCity">City</label>
+		</div>
+		<br>
+		<div>
+			<input type="radio" name="regionOrCity" id="regionOrCity2" value="region">
+			<label for="regionOrCity2">Region</label>
+		</div>
+		<!-- <select name="regionOrCity" id="regionOrCity">
+			<option value="region" selected>Region</option>
+			<option value="city">City</option>
+		</select> -->
+
+		<h4 class="step" id="regionOrCityText"><strong>Step 2:</strong> Enter relevant region</h4>
+		<input id="relCountry" type="text" placeholder="Enter relevant region; Example: Cork City">
+
+		<h4 class="step"><strong>Step 3:</strong> Move box to desired location</h4>
+
+		<h4 class="step"><strong>Step 4:</strong> Copy code below</h4>
+
+
+		<br><br>
+
+		<h3 class="title">Output</h3>
+		<hr style="margin-bottom:  .5rem !important;">
+		<a style="text-align: center;margin-bottom: 6px;width: 81px;" href="javascript:void(0)" onclick="getCode()">Copy Code</a>
+		<code id="result"></code>
+	</div>
+
+	<div id="map"></div>
+
+	<div class="input credits">Created by <a target="_blank" href="https://jacobem.com">JacobEM.com</a>. License: <a target="_blank" href="https://jacobem.com/MIT-LICENSE">MIT</a>.</div>
+
+
+	<!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAk8RoaDwR6b1PX9nq1UwZ3ReAr-AahU78&callback=initMap&libraries=&v=weekly"
+		async
+	></script>
+</body>
+</html>
